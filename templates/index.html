@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TranslateAssistant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../static/script.js"></script>
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <i class="fas fa-language"></i>
+                        <span>TranslateAssistant</span>
+                    </div>
+                    <button class="theme-toggle" id="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <div class="container">
+                <!-- Language Selection -->
+                <div class="language-panel">
+                    <div class="language-selector">
+                        <div class="selector-group">
+                            <label>From</label>
+                            <select id="source-language" class="select">
+                                <option value="en-US">English (US)</option>
+                                <option value="es-ES">Spanish (Spain)</option>
+                                <option value="fr-FR">French (France)</option>
+                                <option value="de-DE">German (Germany)</option>
+                                <option value="ja-JP">Japanese (Japan)</option>
+                                <option value="zh-CN">Chinese (Mandarin)</option>
+                                <option value="pt-BR">Portuguese (Brazil)</option>
+                                <option value="it-IT">Italian (Italy)</option>
+                            </select>
+                        </div>
+                        
+                        <button class="swap-button" id="swap-languages">
+                            <i class="fas fa-exchange-alt"></i>
+                        </button>
+                        
+                        <div class="selector-group">
+                            <label>To</label>
+                            <select id="target-language" class="select">
+                                <option value="English">English</option>
+                                <option value="Spanish" selected>Spanish</option>
+                                <option value="French">French</option>
+                                <option value="German">German</option>
+                                <option value="Japanese">Japanese</option>
+                                <option value="Chinese">Chinese</option>
+                                <option value="Portuguese">Portuguese</option>
+                                <option value="Italian">Italian</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Container -->
+                <div class="chat-container">
+                    <div class="chat-messages" id="chat-window">
+                        <div class="welcome-message">
+                            <div class="welcome-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h3>Start translating</h3>
+                            <p>Type a message or use voice input to begin</p>
+                        </div>
+                        <div id="message-list"></div>
+                        
+                        <!-- Loading animations -->
+                        <div class="loading-message user-loading">
+                            <div class="loading-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <div class="loading-message bot-loading">
+                            <div class="loading-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Input Area -->
+                    <div class="chat-input">
+                        <div class="input-container">
+                            <input 
+                                type="text" 
+                                id="message-input" 
+                                placeholder="Type your message..."
+                                class="message-input"
+                            >
+                            <button id="send-button" class="send-button">
+                                <i class="fas fa-microphone"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
